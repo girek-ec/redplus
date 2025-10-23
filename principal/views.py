@@ -21,14 +21,6 @@ def index(request):
     return render(request, 'index.html', contexto)
 
 
-def iconos(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-
-    return render(request, 'icons_catalog.html', contexto)
 
 def info_cliente(request):
     contexto = {
@@ -39,8 +31,6 @@ def info_cliente(request):
         'ancho_banda': Info_web.objects.filter(categoria='ancho_banda', publicado=True),
     }
     return render(request, 'informacion.html', contexto)
-
-
 
 def contacto(request):
     contexto = {
@@ -125,6 +115,15 @@ def hotspot(request):
     }
     return render(request, 'servicios/servicio_hotspot.html', contexto)
 
+
+def hotspot(request):
+    contexto = {
+        'marca': Empresa.objects.all().first(),
+        'pagina': Pagina.objects.all().first(),
+        'caract_serv': Caract_Servicios.objects.all(),
+    }
+    return render(request, 'servicios/servicio_hotspot.html', contexto)
+
 def go_max(request):
     contexto = {
         'marca': Empresa.objects.all().first(),
@@ -176,164 +175,3 @@ def documentacion(request, id):
     return render(request, 'documentacion.html', contexto)
 
 
-
-
-
-
-def politica_privacidad(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-        'documentaciones': Documentacion.objects.all(),
-    }
-    return render(request, 'politicas/politica_privacidad.html', contexto)
-
-
-def terminos_condiciones(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/terminos_condiciones.html', contexto)
-
-
-def politica_cookies(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/politica_cookies.html', contexto)
-
-
-def uso_servicio(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/uso_servicio.html', contexto)
-
-
-def tratamiento_datos(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/tratamiento_datos.html', contexto)
-
-
-def politica_seguridad(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/politica_seguridad.html', contexto)
-
-
-def beneficios_adulto_mayor(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/beneficios_adulto_mayor.html', contexto)
-
-
-def contrato_adhesion_clientes(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/contrato_adhesion_clientes.html', contexto)
-
-
-def arcotel(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/arcotel.html', contexto)
-
-
-def reclamos_arcotel(request):
-    # puedes pasar el número en el contexto si quieres
-    return render(request, 'politicas/reclamos_arcotel.html', {'telefono': '1800-567567'})
-
-
-def normas_calidad_servicio(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/normas_calidad_servicio.html', contexto)
-
-
-def ley_discapacidades(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/ley_discapacidades.html', contexto)
-
-
-def ley_adulto_mayor(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/ley_adulto_mayor.html', contexto)
-
-
-def reglamento_abonados(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/reglamento_abonados.html', contexto)
-
-
-def guia_control_parental(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/guia_control_parental.html', contexto)
-
-
-def uso_canal(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/uso_canal.html', contexto)
-
-
-def info_basica(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/info_basica.html', contexto)
-
-
-def beneficios_discapacidades(request):
-    contexto = {
-        'marca': Empresa.objects.all().first(),
-        'pagina': Pagina.objects.all().first(),
-        'caract_serv': Caract_Servicios.objects.all(),
-    }
-    return render(request, 'politicas/beneficios_discapacidades.html', contexto)
