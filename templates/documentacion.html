@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Política de Privacidad - RedPlus{% endblock %}
+
+{% block content %}
+    <!-- progress-one -->
+    <section class="progress-one" style="margin-bottom: 70px!important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft animated"
+                     data-wow-duration="1500ms" data-wow-delay="200ms">
+                    <!-- progress-one-left -->
+                    <div class="progress-one-left">
+                        <!-- section-title -->
+                        <div class="section-title">
+                            <i class="icon-main-icon"></i>
+                            <span>Políticas y regulaciones</span>
+                        </div>
+                        <!-- section-main-title -->
+                        <div class="section-main-title">
+                            <h2>{{ documentacion.titulo }}</h2>
+                        </div>
+                    </div>
+                    <div class="progress-one-right">
+                        <p> {{ documentacion.cuerpo|safe }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- progress-one -->
+   
+
+{% endblock %}

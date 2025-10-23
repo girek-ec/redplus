@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ contenido.titulo }}{% endblock %}
+
+{% block content %}
+<div class="container ">
+  <div class="section-title text-center">
+    <i class="flaticon-information"></i>
+    <span>Información al Cliente</span>
+  </div>
+  <div class="content">
+    <h2>{{ contenido.titulo }}</h2>
+    <div class="mt-3">{{ contenido.cuerpo|safe }} </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Arcotel - RedPlus{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Arcotel</h1>
+    <p>Aquí va el contenido de la página <strong>Arcotel</strong>. Edita este archivo para agregar el texto legal o la información necesaria.</p>
+
+    {% if telefono %}
+    <p><strong>Teléfono para reclamos:</strong> {{ telefono }}</p>
+    {% endif %}
+
+    <p><a href="{% url 'home' %}">Volver al inicio</a></p>
+</div>
+{% endblock %}

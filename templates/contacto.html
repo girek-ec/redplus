@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contacto | REDPLUS{% endblock %}
+
+{% block content %}
+<main class="site-main">
+
+  <!-- page-header -->
+  <section class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="container">
+      <div class="page-header-inner text-center">
+        <h2 class="wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">Contacto</h2>
+        <ul class="page-header-inner-title list-unstyled wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="300ms">
+          <li class="arrow-right"><a href="{% url 'home' %}">Inicio</a></li>
+          <li><h4>Contacto</h4></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact-page -->
+  <section class="contact-page py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- columna izquierda -->
+        <div class="col-lg-5 col-md-12 col-sm-12">
+          <div class="contact-page-left wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+            <div class="section-title">
+              <i class="icon-main-icon"></i>
+              <span>¿Tienes preguntas?</span>
+            </div>
+            <div class="section-main-title">
+              <h2>Listos para <span class="section-main-title-primery">ayudarte</span></h2>
+            </div>
+            <div class="contact-info">
+              <ul>
+                <li class="contact-inner">
+                  <div class="icon"><i class="icon-map-marker"></i></div>
+                  <div class="text-box">
+                    <span>Dirección</span>
+                    <h3>{{ marca.direccion }}, {{ marca.ciudad }}</h3>
+                  </div>
+                </li>
+                <li class="contact-inner">
+                  <div class="icon"><i class="icon-phone-volume"></i></div>
+                  <div class="text-box">
+                    <span>Teléfono</span>
+                    <h3>+593 {{ marca.telefono }}</h3>
+                  </div>
+                </li>
+                <li class="contact-inner">
+                  <div class="icon"><i class="icon-gmail-box"></i></div>
+                  <div class="text-box">
+                    <span>Email</span>
+                    <h3>{{ marca.email }}</h3>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- columna derecha (formulario) -->
+        <div class="col-lg-7 col-md-12 col-sm-12 wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms">
+          <div class="contact-page-right">
+            <div class="contact-page-form">
+              <h3 class="contact-page-form-title">Envíanos un mensaje</h3>
+              <p class="contact-page-form-text">¿Tienes dudas o quieres más información? Escríbenos:</p>
+              
+              <form method="post" class="contact-page__form-box contact-form-validated">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="contact-page-input-box">
+                      {{ form.nombre.label_tag }}
+                      {{ form.nombre }}
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="contact-page-input-box">
+                      {{ form.email.label_tag }}
+                      {{ form.email }}
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-lg-12">
+                    <div class="contact-page-input-box">
+                      {{ form.telefono.label_tag }}
+                      {{ form.telefono }}
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-lg-12">
+                    <div class="contact-page-input-box">
+                      {{ form.mensaje.label_tag }}
+                      {{ form.mensaje }}
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-lg-12">
+                    <div class="contact-page-input-box">
+                      <div class="theme-btn">
+                        <button type="submit" class="btn btn-bg-primary">
+                          Enviar Mensaje <i class="icon-1"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- google-map -->
+  <section class="google-map">
+    <div class="container wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.2258516628895!2d-79.82633342291501!3d-3.7609539962129532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x90349eac095162b7%3A0xcd52d2f968797a92!2s24%20de%20Mayo%20%26%20Sucre%2C%20Balsas%2C%20Ecuador!5e0!3m2!1ses-419!2sus!4v1758492875203!5m2!1ses-419!2sus"
+        class="google-map-one"></iframe>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

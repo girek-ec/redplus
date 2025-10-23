@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="site-main">
+
+  <!-- banner-one -->
+  <section class="banner-one">
+    <div class="banner-shape-1"></div>
+    <div class="banner-shape-2"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+          <div class="banner-one-left">
+            <!-- etiqueta superior -->
+            <div class="section-title">
+              <i class="icon-main-icon"></i>
+              <span>Conéctate hoy con REDPLUS</span>
+            </div>
+
+            <!-- título principal -->
+            <div class="section-main-title">
+              <h1>Internet <strong>rápido</strong>, <strong>estable</strong> y <span>al mejor precio</span></h1>
+            </div>
+
+            <!-- detalle bajo el título -->
+            <div class="banner-one-left-details">
+              <div class="banner-details-icon">
+                <img src="{% static 'assets/images/shapes/shape-1.png' %}" alt="icono decorativo">
+              </div>
+              <p>Más de <span>5000+</span> hogares ya disfrutan de nuestra conexión</p>
+            </div>
+
+            <!-- botón -->
+            <div class="theme-btn">
+              <a href="/planes/" class="btn btn-bg-primary">
+                Ver planes<i class="icon-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+          <div class="banner-one-right">
+            <div class="banner-one-right-img-1">
+              <img class="wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="100ms"
+                   src="{% static 'assets/images/resources/banner-one-img-1.png' %}" alt="banner-img-1">
+            </div>
+            <div class="banner-one-right-img-2">
+              <img class="wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms"
+                   src="{% static 'assets/images/resources/banner-two-img-3.jpg' %}" alt="banner-img-2">
+            </div>
+            <div class="banner-one-right-img-3">
+              <img class="wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="500ms"
+                   src="{% static 'assets/images/resources/banner-three-img-3.png' %}" alt="banner-img-3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- services-one -->
+  <section class="services-one">
+    <div class="services-one-shape-1"></div>
+    <div class="services-one-shape-2"></div>
+    <div class="services-one-shape-3"></div>
+    <div class="services-one-shape-4"></div>
+    <div class="container">
+      <div class="section-title text-center">
+        <i class="icon-main-icon"></i>
+        <span>Nuestros Servicios</span>
+      </div>
+      <div class="section-main-title text-center">
+        <h2 class="mx-auto">Todo lo que necesitas para estar siempre <span class="section-main-title-primery">conectado</span>.</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 text-center wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+          <div class="services-one-box">
+            <div class="services-one-icon"><i class="flaticon-fiber"></i></div>
+            <h3>Internet Fibra Óptica</h3>
+            <p>Conexión de alta velocidad y máxima estabilidad para navegar, estudiar y trabajar desde casa.</p>
+            <div class="services-one-btn"><a href="/planes/" class="btn-arrow-right">Ver más</a></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 text-center wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="300ms">
+          <div class="services-one-box">
+            <div class="services-one-icon"><i class="flaticon-wifi"></i></div>
+            <h3>Planes Hogar y Negocio</h3>
+            <p>Diseñados para cubrir desde necesidades básicas de navegación hasta grandes demandas de empresas.</p>
+            <div class="services-one-btn"><a href="/planes/" class="btn-arrow-right">Ver más</a></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 text-center wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="600ms">
+          <div class="services-one-box">
+            <div class="services-one-icon"><i class="flaticon-energy-management"></i></div>
+            <h3>Soporte Técnico 24/7</h3>
+            <p>Atención rápida y personalizada para que tu servicio nunca se detenga.</p>
+            <div class="services-one-btn"><a href="/contacto/" class="btn-arrow-right">Contáctanos</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="services-one-bottom text-center">
+        <p>¿Necesitas ayuda para elegir tu plan ideal? <a href="/contacto/">Escríbenos</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- about-one -->
+  <section class="about-one">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-6">
+          <div class="about-one-img-1">
+            <div class="about-one-inner wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="300ms">
+              <img src="{% static 'assets/images/shapes/about-one-img.png' %}" alt="about-one-img">
+            </div>
+            <div class="about-one-img-2 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+              <img src="{% static 'assets/images/resources/about-one-img-1.jpg' %}" alt="about-one-img-1">
+              <div class="about-one-play-btn">
+                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" class="video-popup"><i class="fas fa-play"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="about-one-info wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms">
+            <div class="section-title"><i class="icon-main-icon"></i><span>Sobre REDPLUS</span></div>
+            <div class="section-main-title">
+              <h2>Internet confiable para tu <span>hogar y negocio</span></h2>
+              <p>Conectamos a las familias y empresas con planes de Internet que ofrecen más velocidad, más estabilidad y un servicio que se adapta a cada necesidad.</p>
+            </div>
+            <ul class="list-item">
+              <li><i class="icon-right-arrow"></i><p>Paga 12 meses y recibe instalación GRATIS.</p></li>
+              <li><i class="icon-right-arrow"></i><p>Descuentos especiales en planes destacados.</p></li>
+            </ul>
+            <div class="theme-btn"><a href="/planes/" class="btn btn-bg-primary">Conoce más<i class="icon-1"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- package-one (resumen) -->
+  <section class="package-one">
+    <div class="package-one-shape-1"></div>
+    <div class="package-one-shape-2"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="200ms">
+          <div class="package-one-info">
+            <div class="section-title"><i class="icon-main-icon"></i><span>Elige tu velocidad</span></div>
+            <div class="section-main-title">
+              <h2>Encuentra el <span class="section-main-title-primery">plan perfecto</span> para ti</h2>
+              <p>Ya sea para navegar en familia, estudiar online, trabajar desde casa o disfrutar tus series favoritas, tenemos el plan que se adapta a ti.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 align-self-center text-center wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms">
+          <div class="package-one-img">
+            <div class="package-one-img-shape">
+              <img src="{% static 'assets/images/resources/package-one-img.jpg' %}" alt="package-one-background">
+              <div class="package-one-text"><h2>100</h2><p>MBPS</p></div>
+              <div class="package-one-text-2"><h2>20<span>%</span></h2><p>OFF</p></div>
+              <div class="package-one-img-shape-2"></div>
+              <div class="package-one-img-shape-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}
