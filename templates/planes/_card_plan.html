@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" style="padding-bottom: 20px" >
+  <div class="pricing-package-one-box h-100" style="margin: 10px !important; ">
+    <div class="box-title text-center">
+      <span>{{ plan.nombre }}</span>
+      <h4>{{ plan.beneficio }}</h4>
+    </div>
+    <div class="box-icon text-center">
+      <i class="{{ plan.icono }}"></i>
+    </div>
+    <ul class="box-item-list" style="text-align: left">
+      <li><i class="icon-angle-double-right"></i><strong>{{ plan.velocidad_mbps }} Mbps</strong> de velocidad</li>
+        {% if plan.n_pantalla_gomax %}
+        	<li><i class="icon-angle-double-right"></i><strong>{{ plan.n_pantalla_gomax }} </strong> Pantalla Gomax</li>
+        {% endif %}
+      <li><i class="icon-angle-double-right"></i>Router <strong> {{ plan.router }} </strong> </li>
+      <li><i class="icon-angle-double-right"></i>Compresión {{ plan.compresion }}</li>
+      <li><i class="icon-angle-double-right"></i>Velocidad simétrica</li>
+      <li><i class="icon-angle-double-right"></i>Dispositivos <strong>ilimitados</strong> </li>
+    </ul>
+    <div class="box-price" style="margin-bottom: 30px">
+      <h3 style="margin-bottom: -20px">${{ plan.precio_mensual }}<span>/mes</span></h3>
+        <h3 ><span style="font-size: 14px">incluye iva</span></h3>
+    </div>
+    <div class="box-btn">
+        <a href="https://api.whatsapp.com/send?phone=+593{{ marca.whatsapp }}&text=Hola%20Me%20interesa%20este%20servicio%20  - {{ plan.nombre }}" class="btn btn-small-primary btn-bg-white">ADQUIRIR PLAN</a>
+    </div>
+  </div>
+</div>

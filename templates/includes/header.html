@@ -1,10 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
+<header class="main-header">
+    <div class="header-menu">
+        <div class="logo-box">
+            <a href="/">
+                <img src="/media/{{ marca.logo }}" alt="Logo">
+            </a>
+        </div>
 
-</body>
-</html>
+        <nav class="navbar-expand-lg">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li>
+                        <a class="text-decoration-none" href="/">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a class="text-decoration-none" href="/planes/">Planes</a>
+                    </li>
+                    <li>
+                        <a class="text-decoration-none" href="/go_max/">Go Max</a>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#">Servicios</a>
+                        <ul>
+                            <li><a href="/hotspot/" >Internet para eventos, Hotspot</a></li>
+                            <li><a href="/en_vivo/">Transmisiones en vivo</a></li>
+                        </ul>
+                    </li>
+                    
+                    
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="/informacion/">Información al cliente</a>
+                        <ul>
+                            <li><a href="/calidad/">Calidad</a></li>
+                            <li><a href="/test_velocidad/">Test de velocidad</a></li>
+                            <li><a href="/consumo/">Consumo</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a class="text-decoration-none" href="/contacto/">Contacto</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="header-right align-items-center">
+            <div class="menu-btn">
+                <a href="https://wa.me/+593{{ marca.whatsapp }}?text=Hola,%20me%20interesa%20contactarme%20con%20{{ marca.nombre|urlencode }}"
+                                   target="_blank"  class="btn btn-small-primary">Contáctanos<i class="icon-1"></i></a>
+            </div>
+            <div class="side-drawer-toggler-btn">
+                <span class="line-1"></span><span class="line-2"></span>
+            </div>
+            <div class="header-right-end">
+                <span class="line-1"></span><span class="line-2"></span><span class="line-3"></span>
+            </div>
+        </div>
+    </div>
+</header>

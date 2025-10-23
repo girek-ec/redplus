@@ -2,14 +2,30 @@
 {% block title %}Arcotel - RedPlus{% endblock %}
 
 {% block content %}
-<div class="card">
-    <h1>Arcotel</h1>
-    <p>Aquí va el contenido de la página <strong>Arcotel</strong>. Edita este archivo para agregar el texto legal o la información necesaria.</p>
 
-    {% if telefono %}
-    <p><strong>Teléfono para reclamos:</strong> {{ telefono }}</p>
-    {% endif %}
-
-    <p><a href="{% url 'home' %}">Volver al inicio</a></p>
-</div>
+ <!-- progress-one -->
+            <section class="progress-one" style="padding-bottom: 60px!important;margin-bottom: 100px!important;">
+                <div class="container" >
+                    <div class="row" >
+                        <div class="col-xl-6 col-lg-6  col-md-12 col-sm-12 wow fadeInLeft animated"
+                            data-wow-duration="1500ms" data-wow-delay="200ms">
+                            <!-- progress-one-left -->
+                            <div class="progress-one-left">
+                                <!-- section-title -->
+                                <div class="section-title">
+                                    <i class="icon-main-icon"></i>
+                                    <span>Velocidad RedPlus</span>
+                                </div>
+                                <!-- section-main-title -->
+                                <div class="section-main-title">
+                                    <h2>Tu ancho de banda es: </span> <span class="section-main-title-primery"> </span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6  col-md-12 col-sm-12 ">
+                            {{ marca.test_velocidad|safe }}
+                        </div>
+                    </div>
+                </div>
+            </section>
 {% endblock %}

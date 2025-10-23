@@ -1,10 +1,249 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>{% block title %}REDPLUS{% endblock %}</title>
+
+  <!-- favicon -->
+  <link rel="icon" href="{{ marca.favicon.url }}" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vendors CSS (coinciden con tus carpetas) -->
+  <link rel="stylesheet" href="{% static 'vendors/bootstrap/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/animate/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/twoet-icons/flaticon_twoet.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/swiper/swiper-bundle.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/bootstrap-select-main/bootstrap-select.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/youtube-popup/youtube-popup.css' %}">
+
+  <!-- Tema -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+  {% block extra_css %}{% endblock %}
+</head>
+
+
+<body class="custom-cursor">
+  <!-- custom-cursor -->
+  <div class="custom-cursor-one"></div>
+  <div class="custom-cursor-two"></div>
+
+  <!-- preloader -->
+  <div class="preloader" id="preloader">
+      <div class="preloader-circle">
+          <div class="preloader-robot" aria-hidden="true"></div>
+      </div>
+  </div>
+
+  <!-- page-wrapper -->
+  <div class="page-wrapper">
+
+    <!-- main-header -->
+    {% include 'includes/header.html' %}
+
+    <!-- site-main -->
+    <main class="site-main">
+      {% block content %}
+          
+      {% endblock %}
+    </main>
+
+    <!-- footer -->
+    {% include 'includes/footer.html' %}
+
+    <!-- mobile-nav-wrapper (Menu para celular) -->
+		<div class="mobile-nav-wrapper">
+			<!-- mobile-nav-overlay -->
+			<div class="mobile-nav-overlay mobile-nav-toggler"></div>
+			<!-- mobile-nav-content -->
+			<div class="mobile-nav-content">
+				<span class="mobile-nav-close mobile-nav-toggler"><i class="fa fa-times"></i></span>
+				<!-- logo-box -->
+				<div class="logo-box">
+					<a href="/" aria-label="logo image"><img src="/media/{{ marca.logo_blanco }}"
+							alt="logo"></a>
+				</div>
+				<!-- mobile-nav-container -->
+				<div class="mobile-nav-container">
+					<!-- main-menu-list -->
+					<ul class="main-menu-list">
+                        <li>
+							<a href="/">Inicio</a>
+						</li>
+                        <li>
+							<a href="/planes/">Planes</a>
+						</li>
+                        
+                        <li>
+							<a href="/go_max/">Go Max</a>
+						</li>
+                        
+						<li class="dropdown current">
+							<a href="#">Servicios</a>
+							<ul>
+								<li><a href="/hotspot/">Internet para eventos, Hotspot</a></li>
+								<li><a href="/en_vivo/">Transmisiones en Vivo</a></li>
+							</ul>
+						</li>
+                        
+                        <li class="dropdown current">
+							<a href="/informacion/">Información al cliente</a>
+							<ul>
+								<li><a href="/calidad/">Calidad</a></li>
+								<li><a href="/test_velocidad/">Test de velocidad</a></li>
+                                <li><a href="/consumo/">Consumo</a></li>
+							</ul>
+						</li>
+                        
+                        
+                        <li>
+							<a href="/contacto/">Contacto</a>
+						</li>
+						
+						
+					</ul>
+				</div>
+				<!-- mobile-nav-contact -->
+				<ul class="mobile-nav-contact list-unstyled">
+					<li>
+						<!-- mobile-menu-call -->
+						<div class="mobile-menu-call">
+							<i class="fas fa-phone" style="color: #e60900!important;"></i>
+							<a href="tel:+593{{ marca.telefono }}">{{ marca.telefono }}</a>
+						</div>
+					</li>
+                    
+                    <li>
+						<!-- mobile-menu-whatsapp -->
+						<div class="mobile-menu-call">
+							<i class="fab fa-whatsapp" style="color: #e60900!important;"></i>
+							<a href="https://wa.me/593{{ marca.whatsapp }}?text=Hola,%20me%20interesa%20contactarme%20con%20{{ marca.nombre|urlencode }}"
+                                               target="_blank"
+                                               class="contact-link"
+                                               title="Enviar mensaje por WhatsApp"
+                                               style="text-decoration-color:#ffffff !important;"
+                                               onmouseover="let h=this.querySelector('h5'); h.style.fontWeight='1000'; h.style.color='#e60900';"
+                                               onmouseout="let h=this.querySelector('h5'); h.style.fontWeight='700'; h.style.color='';">{{ marca.whatsapp }}</a>
+						</div>
+					</li>
+                    <li>
+						<!-- mobile-menu-call -->
+						<div class="mobile-menu-call">
+							<i class="fas fa-map" style="color: #e60900!important;"></i>
+							<a href="{{ marca.maps_link }}">{{ marca.ciudad }} - {{ marca.direccion }}</a>
+						</div>
+					</li>
+                </ul>
+				<!-- mobile-nav-top -->
+				<div class="mobile-nav-top">
+					<!-- mobile-nav-social -->
+					<ul class="mobile-nav-social">
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- side-drawer-wrapper -->
+		<div class="side-drawer-wrapper">
+			<!-- side-drawer-overlay -->
+			<div class="side-drawer-overlay side-drawer-toggler"></div>
+			<!-- side-drawer-content -->
+			<div class="side-drawer-content">
+				<a href="#" class="side-drawer-close side-drawer-toggler">
+					<i class="fa fa-times"></i>
+				</a>
+				<!-- logo-box -->
+				<div class="logo-box">
+					<a href="/" aria-label="logo image"><img src="/media/{{ marca.logo_blanco}}"
+							alt="RedPlus"></a>
+				</div>
+				<!-- side-drawer-widget -->
+				<div class="side-drawer-widget">
+					<h3 class="side-drawer-widget-title">RedPlus</h3>
+					<p class="side-drawer-widget-text"> {{ marca.detalle }}</p>
+				</div>
+				<!-- mobile-nav-top -->
+				<div class="mobile-nav-top">
+					<!-- mobile-nav-social -->
+					<ul class="mobile-nav-social">
+						 <li><a href="https://www.facebook.com/{{ marca.facebook }}" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.x.com/{{ marca.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/{{ marca.instagram }}" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/{{ marca.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+					</ul>
+				</div>
+				
+				<!-- mobile-nav-contact -->
+				<ul class="mobile-nav-contact list-unstyled">
+					
+                    <div class="menu-btn">
+                <a href="https://wa.me/+593{{ marca.whatsapp }}?text=Hola,%20me%20interesa%20contactarme%20con%20{{ marca.nombre|urlencode }}"
+                                   target="_blank"  class="btn btn-small-primary">Contáctanos<i class="icon-1"></i></a>
+            </div>
+                
+				</ul>
+			</div>
+		</div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    <!-- search-popup -->
+    <div class="search-popup">
+      <div class="search-popup-overlay search-toggler"></div>
+      <div class="search-popup-content">
+        <span class="search-popup-close search-toggler"><i class="fa fa-times"></i></span>
+        <form action="#">
+          <label for="search" class="sr-only">Buscar</label>
+          <input type="text" id="search" placeholder="Buscar...">
+          <button type="submit" aria-label="search submit" class="thm-btn">
+            <span><i class="icon-search"></i></span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- /.page-wrapper -->
+
+  <!-- scripts (del demo) -->
+  <script src="/static/vendors/jquery/jquery-3.6.0.min.js"></script>
+  <script src="/static/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendors/fontawesome/attribution.js"></script>
+  <script src="/static/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="/static/vendors/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendors/wow/wow.js"></script>
+  <script src="/static/vendors/bootstrap-select-main/bootstrap-select.min.js"></script>
+  <script src="/static/vendors/youtube-popup/youtube-popup.jquery.js"></script>
+  <script src="/static/js/script.js"></script>
+
+  {% block extra_js %}{% endblock %}
+{% load django_browser_reload %}
+{% django_browser_reload_script %}
 </body>
 </html>

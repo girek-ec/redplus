@@ -1,10 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Planes - REDPLUS{% endblock %}
+
+{% block content %}
+    <section class="pricing-package-one">
+        <div class="pricing-package-one-shape-1"></div>
+        <div class="pricing-package-one-shape-2"></div>
+        <div class="pricing-package-one-shape-3"></div>
+        <div class="pricing-package-one-shape-4"></div>
+        <div class="pricing-package-one-shape-5"></div>
+        <div class="pricing-package-one-shape-6"></div>
+        <div class="pricing-package-one-shape-8" style="top: 10%!important;">
+            <!-- Lado derecho: imagen -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 wow fadeInRight animated"
+                         data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="joinus-four-right">
+                            <div class="joinus-four-right-img">
+                                <div class="joinus-four-right-img-icon text-center" style="background: 0px !important;">
+                                    <img src="/media/{{ pagina.botarga_1 }}" alt="Botarga REDPLUS"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <div class="pricing-package-one-shape-9"></div>
+        <div class="pricing-package-one-shape-10"></div>
+        <div class="pricing-package-one-shape-11"></div>
+        <div class="container">
+        </div>
+        <div class="container">
+            <div class="section-title text-center">
+
+                <div class="section-main-title text-center">
+                    <h2 class="mx-auto">
+                        Conecta tu hogar con <span class="section-main-title-primery">Internet sin límites</span>
+                    </h2>
+                    <p class="mt-2">
+                        Fibra Óptica y Wireless con velocidad simétrica, compresión inteligente y dispositivos
+                        ilimitados.
+                    </p>
+                </div>
+                <div class="section-title text-center mt-5">
+                    <i class="icon-angle-double-right"></i>
+                    <span>Planes Home – Fibra Óptica</span>
+                </div>
+                <div class="row">
+                    {% for p in planes_fibra %}
+                        {% include "planes/_card_plan.html" with plan=p %}
+                    {% empty %}
+                        <p class="text-center">Pronto nuevos planes de fibra.</p>
+                    {% endfor %}
+                </div>
+
+                <div class="section-title text-center mt-5">
+                    <i class="icon-main-icon"></i>
+                    <span>Planes Home – Wireless</span>
+                </div>
+                <div class="row">
+                    {% for p in planes_wireless %}
+                        {% include "planes/_card_plan.html" with plan=p %}
+                    {% empty %}
+                        <p class="text-center">Pronto nuevos planes wireless.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

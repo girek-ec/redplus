@@ -4,127 +4,293 @@
 {% block title %}Contacto | REDPLUS{% endblock %}
 
 {% block content %}
-<main class="site-main">
+    <main class="site-main">
 
-  <!-- page-header -->
-  <section class="page-header">
-    <div class="page-header-bg"></div>
-    <div class="container">
-      <div class="page-header-inner text-center">
-        <h2 class="wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">Contacto</h2>
-        <ul class="page-header-inner-title list-unstyled wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="300ms">
-          <li class="arrow-right"><a href="{% url 'home' %}">Inicio</a></li>
-          <li><h4>Contacto</h4></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- contact-page -->
-  <section class="contact-page py-5">
-    <div class="container">
-      <div class="row align-items-center">
-        
-        <!-- columna izquierda -->
-        <div class="col-lg-5 col-md-12 col-sm-12">
-          <div class="contact-page-left wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <div class="section-title">
-              <i class="icon-main-icon"></i>
-              <span>¿Tienes preguntas?</span>
+        <!-- page-header -->
+        <section class="page-header">
+            <div class="page-header-bg"
+                 style="background-image: url('{{ pagina.img_contacto.url }}') !important;">
             </div>
-            <div class="section-main-title">
-              <h2>Listos para <span class="section-main-title-primery">ayudarte</span></h2>
-            </div>
-            <div class="contact-info">
-              <ul>
-                <li class="contact-inner">
-                  <div class="icon"><i class="icon-map-marker"></i></div>
-                  <div class="text-box">
-                    <span>Dirección</span>
-                    <h3>{{ marca.direccion }}, {{ marca.ciudad }}</h3>
-                  </div>
-                </li>
-                <li class="contact-inner">
-                  <div class="icon"><i class="icon-phone-volume"></i></div>
-                  <div class="text-box">
-                    <span>Teléfono</span>
-                    <h3>+593 {{ marca.telefono }}</h3>
-                  </div>
-                </li>
-                <li class="contact-inner">
-                  <div class="icon"><i class="icon-gmail-box"></i></div>
-                  <div class="text-box">
-                    <span>Email</span>
-                    <h3>{{ marca.email }}</h3>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- columna derecha (formulario) -->
-        <div class="col-lg-7 col-md-12 col-sm-12 wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms">
-          <div class="contact-page-right">
-            <div class="contact-page-form">
-              <h3 class="contact-page-form-title">Envíanos un mensaje</h3>
-              <p class="contact-page-form-text">¿Tienes dudas o quieres más información? Escríbenos:</p>
-              
-              <form method="post" class="contact-page__form-box contact-form-validated">
-                {% csrf_token %}
-                <div class="row">
-                  <div class="col-xl-6 col-lg-6">
-                    <div class="contact-page-input-box">
-                      {{ form.nombre.label_tag }}
-                      {{ form.nombre }}
-                    </div>
-                  </div>
-                  <div class="col-xl-6 col-lg-6">
-                    <div class="contact-page-input-box">
-                      {{ form.email.label_tag }}
-                      {{ form.email }}
-                    </div>
-                  </div>
-                  <div class="col-xl-12 col-lg-12">
-                    <div class="contact-page-input-box">
-                      {{ form.telefono.label_tag }}
-                      {{ form.telefono }}
-                    </div>
-                  </div>
-                  <div class="col-xl-12 col-lg-12">
-                    <div class="contact-page-input-box">
-                      {{ form.mensaje.label_tag }}
-                      {{ form.mensaje }}
-                    </div>
-                  </div>
-                  <div class="col-xl-12 col-lg-12">
-                    <div class="contact-page-input-box">
-                      <div class="theme-btn">
-                        <button type="submit" class="btn btn-bg-primary">
-                          Enviar Mensaje <i class="icon-1"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+            <div class="container">
+                <div class="page-header-inner text-center">
+                    <h2 class="wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">Contacto</h2>
+                    <ul class="page-header-inner-title list-unstyled wow fadeInUp animated" data-wow-duration="1500ms"
+                        data-wow-delay="300ms">
+                        <li class="arrow-right"><a href="{% url 'home' %}">Inicio</a></li>
+                        <li><h4>Contacto</h4></li>
+                    </ul>
                 </div>
-              </form>
-
             </div>
-          </div>
-        </div>
+        </section>
 
-      </div>
-    </div>
-  </section>
+        <!-- contact-page -->
+        <section class="contact-page py-5">
+            <div class="container">
+            <div class="section-main-title" style="text-align:center!important;">
+                        <h2>Matriz: <span class="section-main-title-primery">{{ marca.ciudad }}</span></h2>
+                    </div>
+                <div class="row align-items-center">
 
-  <!-- google-map -->
-  <section class="google-map">
-    <div class="container wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.2258516628895!2d-79.82633342291501!3d-3.7609539962129532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x90349eac095162b7%3A0xcd52d2f968797a92!2s24%20de%20Mayo%20%26%20Sucre%2C%20Balsas%2C%20Ecuador!5e0!3m2!1ses-419!2sus!4v1758492875203!5m2!1ses-419!2sus"
-        class="google-map-one"></iframe>
-    </div>
-  </section>
+                    <!-- columna izquierda -->
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+                        <div class="contact-page-left wow fadeInLeft animated" data-wow-duration="1500ms"
+                             data-wow-delay="100ms">
+                            <div class="section-title">
+                                <i class="icon-main-icon"></i>
+                                <span>¿Tienes preguntas?</span>
+                            </div>
+                            <div class="section-main-title">
+                                <h2>Listos para <span class="section-main-title-primery">ayudarte</span></h2>
+                            </div>
+                            <div class="contact-info">
+                                <ul>
+                                    <li class="contact-inner" style="margin-top: 15px!important;">
+                                        <div class="icon"><i class="icon-map"></i></div>
+                                        <div class="text-box">
+                                            <span>Dirección</span>
+                                            <a href="{{ marca.maps_link }}" target="_blank" rel="noopener noreferrer"
+                                               title="Abrir en Google Maps"
+                                               style="text-decoration-color:#ffffff !important;"
+                                               onmouseover="let h=this.querySelector('h5'); h.style.fontWeight='1000'; h.style.color='#e60900';"
+                                               onmouseout="let h=this.querySelector('h5'); h.style.fontWeight='700'; h.style.color='';">
+                                                <h5>{{ marca.direccion }}, {{ marca.ciudad }}</h5>
+                                            </a>
 
-</main>
+                                        </div>
+                                    </li>
+                                    <li class="contact-inner" style="margin-top: 15px!important;">
+                                        <div class="icon"><i class="fas fa-phone"></i></div>
+                                        <div class="text-box">
+                                            <span>Teléfono</span>
+                                            <a href="tel:+593{{ marca.telefono }}"
+                                               class="contact-link" title="Llamar ahora"
+                                               style="text-decoration-color:#ffffff !important;"
+                                               target="_blank"
+                                               onmouseover="let h=this.querySelector('h5'); h.style.fontWeight='1000'; h.style.color='#e60900';"
+                                               onmouseout="let h=this.querySelector('h5'); h.style.fontWeight='700'; h.style.color='';">
+
+                                                <h5>+593 {{ marca.telefono }}</h5></a>
+                                        </div>
+                                    </li>
+
+                                    <li class="contact-inner" style="margin-top: 15px!important;">
+                                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                                        <div class="text-box">
+                                            <span>WhatsApp</span>
+                                            <a href="https://wa.me/593{{ marca.whatsapp }}?text=Hola,%20me%20interesa%20contactarme%20con%20{{ marca.nombre|urlencode }}"
+                                               target="_blank"
+                                               class="contact-link"
+                                               title="Enviar mensaje por WhatsApp"
+                                               style="text-decoration-color:#ffffff !important;"
+                                               onmouseover="let h=this.querySelector('h5'); h.style.fontWeight='1000'; h.style.color='#e60900';"
+                                               onmouseout="let h=this.querySelector('h5'); h.style.fontWeight='700'; h.style.color='';">
+                                                <h5>+593 {{ marca.whatsapp }}</h5>
+                                            </a>
+                                        </div>
+                                    </li>
+
+                                    <!-- Email -->
+                                    <li class="contact-inner" style="margin-top: 15px!important;">
+                                        <div class="icon"><i class="icon-mail"></i></div>
+                                        <div class="text-box">
+                                            <span>Email</span>
+                                            <a href="mailto:{{ marca.email }}?subject=Consulta%20-%20{{ marca.nombre|urlencode }}&body=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20productos/servicios."
+                                               target="_blank"
+                                               class="contact-link"
+                                               title="Enviar mensaje por WhatsApp"
+                                               style="text-decoration-color:#ffffff !important;"
+                                               onmouseover="let h=this.querySelector('h5'); h.style.fontWeight='1000'; h.style.color='#e60900';"
+                                               onmouseout="let h=this.querySelector('h5'); h.style.fontWeight='700'; h.style.color='';">
+                                                <h5 class="mb-0 mt-1">{{ marca.email }}</h5>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-7 col-md-12 col-sm-12 wow fadeInRight animated" data-wow-duration="1500ms"
+                         data-wow-delay="200ms">
+                        <!-- contact-page-right -->
+                        <div class="contact-page-right">
+                            <div class="contact-page-form">
+                                <h3 class="contact-page-form-title">Envíanos un mensaje</h3>
+                                <p class="contact-page-form-text">¿Tienes dudas o quieres más información?</p>
+                                {% if messages %}
+                                    <div class="mb-3">
+                                        {% for message in messages %}
+                                            <div class="alert 
+                                            {% if message.tags %}alert-{{ message.tags }}{% endif %}"
+                                                 role="alert">{{ message }}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <form method="post" class="contact-page__form-box contact-form-validated">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="contact-page-input-box">
+                                                <label for="full-Name-123">Nombre completo</label>
+                                                <input type="text" id="full-Name-123" placeholder="Nombre completo"
+                                                       class="input-contact-text" name="nombre"
+                                                       value="{{ request.POST.nombre|default:'' }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6">
+                                            <div class="contact-page-input-box">
+                                                <label for="email-123">Email</label>
+                                                <input type="email" class="input-contact-text" id="email-123"
+                                                       placeholder="@gmail.com" name="email"
+                                                       value="{{ request.POST.email|default:'' }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12 col-lg-12">
+                                            <div class="contact-page-input-box">
+                                                <label for="textbox">Tema</label>
+                                                <input type="text" id="textbox" class="input-contact-text"
+                                                       placeholder="Título de mensaje" name="asunto"
+                                                       value="{{ request.POST.asunto|default:'' }}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12 col-lg-12">
+                                            <div class="contact-page-input-box">
+                                                <label for="message-123">Mensaje</label>
+                                                <textarea name="mensaje" class="input-contact-text" id="message-123"
+                                                          placeholder="Escribe un mensaje"
+                                                          required>{{ request.POST.mensaje|default:'' }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12 col-lg-12">
+                                            <div class="contact-page-input-box">
+                                                <div class="theme-btn">
+                                                    <button type="submit" class="btn btn-bg-primary">Enviar<i
+                                                            class="icon-1"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- google-map -->
+        <section class="google-map">
+            <div class="container wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+                <iframe src="{{ marca.maps_view }}" class="google-map-one"></iframe>
+            </div>
+        </section>
+
+        {% for sucur in sucursal %}
+
+            <!-- contact-page -->
+            <section class="contact-page py-5">
+                <div class="container">
+                    <div class="section-main-title" style="text-align:center!important;">
+                        <h2>Sucursal: <span class="section-main-title-primery">{{ sucur.ciudad }}</span></h2>
+                    </div>
+
+                    <div class="row" >
+
+                        <!-- columna izquierda -->
+                        <div class="col-lg-5 col-md-12 col-sm-12" >
+                            <!-- Este div ocupará 100% de la altura de la columna y centra verticalmente su contenido -->
+                            <div class="contact-page-left wow fadeInLeft animated w-100"
+                                 style=" margin-bottom: 30px!important; display:flex; flex-direction:column; justify-content:flex-start; height:100%;" data-wow-duration="1500ms" data-wow-delay="100ms " >
+
+                                <div>
+                                    <div class="section-title">
+                                        <i class="icon-main-icon"></i>
+                                        <span>¿Tienes preguntas?</span>
+                                    </div>
+
+                                    <div class="section-main-title">
+                                        <h2>Listos para <span class="section-main-title-primery">ayudarte</span></h2>
+                                    </div>
+
+                                    <div class="contact-info">
+                                        <ul>
+                                            <li class="contact-inner" style="margin-top:15px;">
+                                                <div class="icon"><i class="icon-map"></i></div>
+                                                <div class="text-box">
+                                                    <span>Dirección</span>
+                                                    <a href="{{ sucur.maps_link }}" target="_blank"
+                                                       rel="noopener noreferrer" title="Abrir en Google Maps"
+                                                       style="text-decoration-color:#ffffff !important;">
+                                                        <h5>{{ sucur.direccion }}, {{ sucur.ciudad }}</h5>
+                                                    </a>
+                                                </div>
+                                            </li>
+
+                                            <li class="contact-inner" style="margin-top:15px;">
+                                                <div class="icon"><i class="fas fa-phone"></i></div>
+                                                <div class="text-box">
+                                                    <span>Teléfono</span>
+                                                    <a href="tel:+593{{ sucur.telefono }}" class="contact-link"
+                                                       title="Llamar ahora">
+                                                        <h5>+593 {{ sucur.telefono }}</h5>
+                                                    </a>
+                                                </div>
+                                            </li>
+
+                                            <li class="contact-inner" style="margin-top:15px;">
+                                                <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                                                <div class="text-box">
+                                                    <span>WhatsApp</span>
+                                                    <a href="https://wa.me/593{{ sucur.whatsapp }}?text=Hola,%20me%20interesa%20contactarme%20con%20{{ marca.nombre|urlencode }}"
+                                                       target="_blank" rel="noopener noreferrer" class="contact-link"
+                                                       title="Enviar mensaje por WhatsApp">
+                                                        <h5>+593 {{ sucur.whatsapp }}</h5>
+                                                    </a>
+                                                </div>
+                                            </li>
+
+                                            <li class="contact-inner" style="margin-top:15px;">
+                                                <div class="icon"><i class="icon-mail"></i></div>
+                                                <div class="text-box">
+                                                    <span>Email</span>
+                                                    <a href="mailto:{{ marca.email }}?subject=Consulta%20-%20{{ marca.nombre|urlencode }}"
+                                                       class="contact-link" title="Enviar email">
+                                                        <h5 class="mb-0 mt-1">{{ marca.email }}</h5>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- columna derecha (mapa) -->
+                        <div class="col-lg-7 col-md-12 col-sm-12" >
+                            <!-- google-map -->
+                            <section class="google-map">
+                                <div class="container wow fadeInUp animated" data-wow-duration="1500ms"
+                                     data-wow-delay="100ms">
+                                    <iframe src="{{ sucur.maps_view }}" class="google-map-one"></iframe>
+                                </div>
+                            </section>
+                        </div>
+
+                    </div> <!-- .row -->
+                </div>
+            </section>
+
+
+
+        {% endfor %}
+
+
+    </main>
 {% endblock %}

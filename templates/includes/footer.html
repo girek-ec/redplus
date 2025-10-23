@@ -1,10 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
 
-</body>
-</html>
+<footer>
+    <div class="footer-main">
+        <div class="footer-main-shape-1"></div>
+        <div class="footer-main-shape-2"></div>
+        <div class="container">
+            <div class="row">
+                <!-- About -->
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <div class="footer-widget footer-widget-about">
+                        <a href="/" class="footer-widget-logo">
+                            {% if marca.logo_blanco %}
+                                <img src="{{ marca.logo_blanco.url }}" alt="{{ marca.nombre|default:'RedPlus' }}">
+                            {% else %}
+                                <img src="{{ marca.logo_blanco.url }}"
+                                     alt="{{ marca.nombre|default:'RedPlus' }}">
+                            {% endif %}
+                        </a>
+                        <p class="footer-widget-text">
+                            Síguenos en nuestras redes.
+                        </p>
+                        <ul class="footer-widget-social">
+                            <li><a href="https://www.facebook.com/{{ marca.facebook }}" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.x.com/{{ marca.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/{{ marca.instagram }}" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/{{ marca.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="col-lg-2 col-md-4 col-sm-12">
+                    <div class="footer-widget footer-widget-links">
+                        <h3 class="footer-widget-title">Enlaces</h3>
+                        <ul class="footer-widget-links-details">
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="/planes/">Planes</a></li>
+                            <li><a href="/go_max/">Go Max</a></li>
+                            <li><a href="/informacion/">Información</a></li>
+                            <li><a href="/contacto/">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <div class="footer-widget footer-widget-contact">
+                        <h3 class="footer-widget-title">Contacto</h3>
+                        <ul class="footer-widget-contact-details">
+                            <li>
+                                <i class="icon-map"></i>
+                                <a href="{{ marca.maps_link }}" target="_blank" 
+                                               title="Abrir en Google Maps">
+                                               {{ marca.ciudad }} - {{ marca.direccion }}</a>
+                            </li>
+
+                            <li>
+                                <i class="icon-uniE90D"></i>
+                                <a href="tel:+593{{ marca.telefono }}" target="_blank">{{ marca.telefono }}</a>
+                            </li>
+
+                            <li>
+                                <i class="fab fa-whatsapp" style="text-decoration-color: #e60900 !important;"   ></i>
+                                <a href="https://wa.me/+593{{ marca.whatsapp }}?text=Hola,%20me%20interesa%20contactarme%20con%20{{ marca.nombre|urlencode }}"
+                                   target="_blank"
+                                   class="contact-link"
+                                   title="Enviar mensaje por WhatsApp"
+                                   style="text-decoration-color:#ffffff !important;"
+                                   onmouseover="let h=this.querySelector('h5'); h.style.fontWeight='1000'; h.style.color='#e60900';"
+                                   onmouseout="let h=this.querySelector('h5'); h.style.fontWeight='700'; h.style.color='';">{{ marca.whatsapp }}</a>
+                            </li>
+
+                            <li>
+                                <i class="icon-mail"></i>
+                                <a href="mailto:{{ marca.email }}" target="_blank">{{ marca.email }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Políticas y regulaciones -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget footer-widget-links">
+                        <h3 class="footer-widget-title">Políticas y regulaciones</h3>
+                        <ul class="footer-widget-links-details">
+                            {% for documan in documentaciones %}
+                                {% if documan.categoria == "politica_regulaciones" %}
+                                    {% if  documan.activar_link %}
+                                        <li><a href="https://{{ documan.link }}" target="_blank">{{ documan.titulo }}</a></li>
+                                    {% else %}
+                                        <li><a href="{% url 'documentacion' documan.id %}">{{ documan.titulo }}</a></li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            
+                <!-- Legislación y ayuda -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget footer-widget-links">
+                        <h3 class="footer-widget-title">Legislación y ayuda</h3>
+                        <ul class="footer-widget-links-details">
+                            {% for documan in documentaciones %}
+                                {% if documan.categoria == "legislacion_ayuda" %}
+                                    {% if  documan.activar_link %}
+                                        <li><a href="https://{{ documan.link }}" target="_blank">{{ documan.titulo }}</a></li>
+                                    {% else %}
+                                        <li><a href="{% url 'documentacion' documan.id %}">{{ documan.titulo }}</a></li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Normas y beneficios -->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget footer-widget-links">
+                        <h3 class="footer-widget-title">Normas y beneficios</h3>
+                        <ul class="footer-widget-links-details">
+                            {% for documan in documentaciones %}
+                                {% if documan.categoria == "normas_beneficio" %}
+                                    {% if  documan.activar_link %}
+                                        <li><a href="https://{{ documan.link }}" target="_blank">{{ documan.titulo }}</a></li>
+                                    {% else %}
+                                        <li><a href="{% url 'documentacion' documan.id %}">{{ documan.titulo }}</a></li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ayuda rápida-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget footer-widget-links">
+                        <h3 class="footer-widget-title">Ayuda rápida</h3>
+                        <ul class="footer-widget-contact-details">
+                            {% for documan in documentaciones %}
+                                {% if documan.categoria == "ayuda_rapida" %}
+                                    {% if  documan.activar_link %}
+                                        <li><a href="https://{{ documan.link }}"  target="_blank">{{ documan.titulo }}</a></li>
+                                    {% else %}
+                                        <li><a href="{% url 'documentacion' documan.id %}">{{ documan.titulo }}</a></li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Boletín -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="footer-widget footer-widget-newsletter">
+                        <h3 class="footer-widget-title">Boletín</h3>
+                        <form action="#" method="post">
+                            {% csrf_token %}
+                            <input type="email" name="EMAIL" placeholder="Correo electrónico" required>
+                            <button class="btn btn-bg-white"><span>Suscribirme<i class="icon-1"></i></span></button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom"> 
+        <div class="container">
+            <div class="footer-bottom-inner">
+                <a href="#" class="scroll-to-target scroll-to-top" id="scroll" style="display: none;">
+                    <i class="icon-angle-double-up"></i> 
+                </a>
+                <div class="copyright">
+                    <p>© {% now "Y" %} <a href="/">REDPLUS</a>. Todos los derechos reservados.- Desarrollado por <a href="https://benitez-ec.com/girekstudio/" target="_blank">GirekStudio</a> </p>
+                </div>
+                <ul class="footer-widget-one-menu-two list-unstyled">
+                   <li><a href="https://www.facebook.com/{{ marca.facebook }}" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.x.com/{{ marca.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/{{ marca.instagram }}" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/{{ marca.youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

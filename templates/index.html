@@ -1,174 +1,331 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<main class="site-main">
+    <!-- site-main -->
+    <main class="site-main">
+        <!-- banner-one -->
+        <section class="banner-one">
+            <div class="banner-shape-1"></div>
+            <div class="banner-shape-2"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft animated"
+                         data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <!-- banner-one-left -->
+                        <div class="banner-one-left">
+                            <!-- section-title -->
+                            <div class="section-title">
+                                <i class="icon-main-icon"></i>
+                                <span>Conexión estable y velocidad real garantizada</span>
+                            </div>
+                            <!-- section-main-title -->
+                            <div class="section-main-title">
+                                <h1>Internet<strong> rápido</strong> <span> confiable</span>
+                                    <strong>y de calidad</strong>
+                                </h1>
+                            </div>
+                            <!-- banner-one-left-details -->
+                            <div class="banner-one-left-details">
+                                <div class="banner-details-icon">
+                                    <img src="/static/images/shapes/shape-1.png" alt="shape-1">
+                                </div>
+                                <p>Tu conexión completa: <span> Internet </span> + <span> Tv </span></p>
+                            </div>
+                            <!-- banner-one-btn -->
+                            <div class="theme-btn">
+                                <a href="/planes/" class="btn btn-bg-primary">Ver Planes<i class="icon-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <!-- banner-one-right -->
+                        <div class="banner-one-right">
+                            <div class="banner-one-right-img-1">
+                                <img class="wow fadeInRight animated" data-wow-duration="1500ms"
+                                     data-wow-delay="100ms" src="/media/{{ pagina.img_1 }}"
+                                     alt="banner-img-1">
+                            </div>
+                            <div class="banner-one-right-img-2 d-none d-xl-block d-lg-block">
+                                <img class="wow fadeInRight animated" data-wow-duration="1500ms"
+                                     data-wow-delay="200ms" src="/media/{{ pagina.img_2 }}"
+                                     alt="banner-img-3">
+                            </div>
+                            <div class="banner-one-right-img-3 d-none d-xl-block d-lg-block">
+                                <img class="wow fadeInRight animated" data-wow-duration="1500ms"
+                                     data-wow-delay="500ms" src="/media/{{ pagina.img_3 }}"
+                                     alt="banner-img-1234">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- banner-one -->
-  <section class="banner-one">
-    <div class="banner-shape-1"></div>
-    <div class="banner-shape-2"></div>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
-          <div class="banner-one-left">
-            <!-- etiqueta superior -->
-            <div class="section-title">
-              <i class="icon-main-icon"></i>
-              <span>Conéctate hoy con REDPLUS</span>
-            </div>
 
-            <!-- título principal -->
-            <div class="section-main-title">
-              <h1>Internet <strong>rápido</strong>, <strong>estable</strong> y <span>al mejor precio</span></h1>
-            </div>
+        <style>
+            /* 1) Forzar que las columnas hijos tengan la misma altura */
+            #whychoose-cards .whychoose-one-box .row {
+                align-items: stretch; /* hace que las columnas (col-5 / col-7) tengan la misma altura */
+            }
 
-            <!-- detalle bajo el título -->
-            <div class="banner-one-left-details">
-              <div class="banner-details-icon">
-                <img src="{% static 'assets/images/shapes/shape-1.png' %}" alt="icono decorativo">
-              </div>
-              <p>Más de <span>5000+</span> hogares ya disfrutan de nuestra conexión</p>
-            </div>
+            /* 2) Convertir la columna de la imagen en un flex container para centrar la img */
+            #whychoose-cards .col-5 {
+                display: flex;
+                align-items: center; /* centra verticalmente la imagen */
+                justify-content: center; /* opcional, centra horizontalmente */
+                padding: 0.5rem;
+            }
 
-            <!-- botón -->
-            <div class="theme-btn">
-              <a href="/planes/" class="btn btn-bg-primary">
-                Ver planes<i class="icon-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+            /* 3) Ajustar la imagen por altura, mantener proporción y recortar si hace falta */
+            #whychoose-cards .feature-img {
+                height: 100%; /* ocupa la altura del contenedor (igual que el hermano) */
+                width: auto; /* mantiene proporción */
+                object-fit: cover; /* recorta si la relación no coincide */
+                display: block;
+                max-height: 220px; /* límite opcional para evitar imágenes gigantes */
+                border-radius: .5rem;
+            }
 
-        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
-          <div class="banner-one-right">
-            <div class="banner-one-right-img-1">
-              <img class="wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="100ms"
-                   src="{% static 'assets/images/resources/banner-one-img-1.png' %}" alt="banner-img-1">
-            </div>
-            <div class="banner-one-right-img-2">
-              <img class="wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms"
-                   src="{% static 'assets/images/resources/banner-two-img-3.jpg' %}" alt="banner-img-2">
-            </div>
-            <div class="banner-one-right-img-3">
-              <img class="wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="500ms"
-                   src="{% static 'assets/images/resources/banner-three-img-3.png' %}" alt="banner-img-3">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            /* 4) Si quieres que la imagen nunca supere cierta altura en móviles */
+            @media (max-width: 575.98px) {
+                #whychoose-cards .feature-img {
+                    max-height: 140px;
+                    height: auto; /* en móviles quizá prefieras que no estire tanto */
+                    width: 100%;
+                    object-fit: cover;
+                }
 
-  <!-- services-one -->
-  <section class="services-one">
-    <div class="services-one-shape-1"></div>
-    <div class="services-one-shape-2"></div>
-    <div class="services-one-shape-3"></div>
-    <div class="services-one-shape-4"></div>
-    <div class="container">
-      <div class="section-title text-center">
-        <i class="icon-main-icon"></i>
-        <span>Nuestros Servicios</span>
-      </div>
-      <div class="section-main-title text-center">
-        <h2 class="mx-auto">Todo lo que necesitas para estar siempre <span class="section-main-title-primery">conectado</span>.</h2>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="100ms">
-          <div class="services-one-box">
-            <div class="services-one-icon"><i class="flaticon-fiber"></i></div>
-            <h3>Internet Fibra Óptica</h3>
-            <p>Conexión de alta velocidad y máxima estabilidad para navegar, estudiar y trabajar desde casa.</p>
-            <div class="services-one-btn"><a href="/planes/" class="btn-arrow-right">Ver más</a></div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 text-center wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="300ms">
-          <div class="services-one-box">
-            <div class="services-one-icon"><i class="flaticon-wifi"></i></div>
-            <h3>Planes Hogar y Negocio</h3>
-            <p>Diseñados para cubrir desde necesidades básicas de navegación hasta grandes demandas de empresas.</p>
-            <div class="services-one-btn"><a href="/planes/" class="btn-arrow-right">Ver más</a></div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 text-center wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="600ms">
-          <div class="services-one-box">
-            <div class="services-one-icon"><i class="flaticon-energy-management"></i></div>
-            <h3>Soporte Técnico 24/7</h3>
-            <p>Atención rápida y personalizada para que tu servicio nunca se detenga.</p>
-            <div class="services-one-btn"><a href="/contacto/" class="btn-arrow-right">Contáctanos</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="services-one-bottom text-center">
-        <p>¿Necesitas ayuda para elegir tu plan ideal? <a href="/contacto/">Escríbenos</a></p>
-      </div>
-    </div>
-  </section>
+                #whychoose-cards .col-5 {
+                    justify-content: flex-start;
+                }
+            }
 
-  <!-- about-one -->
-  <section class="about-one">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-xl-6">
-          <div class="about-one-img-1">
-            <div class="about-one-inner wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="300ms">
-              <img src="{% static 'assets/images/shapes/about-one-img.png' %}" alt="about-one-img">
-            </div>
-            <div class="about-one-img-2 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
-              <img src="{% static 'assets/images/resources/about-one-img-1.jpg' %}" alt="about-one-img-1">
-              <div class="about-one-play-btn">
-                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" class="video-popup"><i class="fas fa-play"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6">
-          <div class="about-one-info wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms">
-            <div class="section-title"><i class="icon-main-icon"></i><span>Sobre REDPLUS</span></div>
-            <div class="section-main-title">
-              <h2>Internet confiable para tu <span>hogar y negocio</span></h2>
-              <p>Conectamos a las familias y empresas con planes de Internet que ofrecen más velocidad, más estabilidad y un servicio que se adapta a cada necesidad.</p>
-            </div>
-            <ul class="list-item">
-              <li><i class="icon-right-arrow"></i><p>Paga 12 meses y recibe instalación GRATIS.</p></li>
-              <li><i class="icon-right-arrow"></i><p>Descuentos especiales en planes destacados.</p></li>
-            </ul>
-            <div class="theme-btn"><a href="/planes/" class="btn btn-bg-primary">Conoce más<i class="icon-1"></i></a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </style>
 
-  <!-- package-one (resumen) -->
-  <section class="package-one">
-    <div class="package-one-shape-1"></div>
-    <div class="package-one-shape-2"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-6 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="200ms">
-          <div class="package-one-info">
-            <div class="section-title"><i class="icon-main-icon"></i><span>Elige tu velocidad</span></div>
-            <div class="section-main-title">
-              <h2>Encuentra el <span class="section-main-title-primery">plan perfecto</span> para ti</h2>
-              <p>Ya sea para navegar en familia, estudiar online, trabajar desde casa o disfrutar tus series favoritas, tenemos el plan que se adapta a ti.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6 align-self-center text-center wow fadeInRight animated" data-wow-duration="1500ms" data-wow-delay="200ms">
-          <div class="package-one-img">
-            <div class="package-one-img-shape">
-              <img src="{% static 'assets/images/resources/package-one-img.jpg' %}" alt="package-one-background">
-              <div class="package-one-text"><h2>100</h2><p>MBPS</p></div>
-              <div class="package-one-text-2"><h2>20<span>%</span></h2><p>OFF</p></div>
-              <div class="package-one-img-shape-2"></div>
-              <div class="package-one-img-shape-3"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- whychoose-one -->
+        <section class="whychoose-one" id="whychoose-cards">
+            <div class="container" style="margin-bottom: 50px!important;">
+                <!-- section-title -->
+                <div class="section-title text-center">
+                   <i class="icon-main-icon"></i>
+                    
+                    <span></span>
+                </div>
 
-</main>
+                <!-- section-main-title -->
+                <div class="section-main-title text-center">
+                    
+                    <h2 class="mx-auto">
+                        Conoce por qué todos eligen <span class="section-main-title-primery">RedPlus</span>
+                    </h2>
+                </div>
+
+                <div class="row g-4">
+                    {% for caract in caract_serv %}
+                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 d-flex wow fadeInUp"
+                             data-wow-duration="1500ms" data-wow-delay="100ms">
+                            <div class="whychoose-one-box w-100 p-4 rounded-4">
+                                <div class="row g-3 align-items-center">
+                                    <!-- Columna IZQUIERDA: imagen -->
+                                    <div class="col-5 col-sm-4">
+                                        {% if caract.imagen %}
+                                            <img src="/media/{{ caract.imagen }}" alt="{{ caract.titulo }}"
+                                                 class="feature-img rounded-3">
+                                        {% endif %}
+                                    </div>
+                                    <!-- Columna DERECHA: icono + textos -->
+                                    <div class="col-7 col-sm-8 d-flex gap-3">
+
+                                        <div class="flex-grow-1">
+                                            <i class="{{ caract.icono }} feature-ico"><h4 class="mb-2">
+                                                &nbsp; {{ caract.titulo }}</h4></i>
+
+                                            <p class="mb-0 feature-text">{{ caract.detalle }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+        <!-- joinus-four -->
+        <!-- joinus-four -->
+        <section class="joinus-four">
+            <div class="joinus-four-shape-1"></div>
+            <div class="joinus-four-shape-2"></div>
+            <div class="joinus-four-shape-3"></div>
+            <div class="joinus-four-shape-4"></div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Lado izquierdo: título, descripción y CTA -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 wow fadeInLeft animated"
+                         data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="joinus-four-left">
+                            <div class="section-title">
+                                <i class="icon-main-icon" aria-hidden="true"></i>
+                                <span>Conéctate con nosotros</span>
+                            </div>
+
+                            <div class="section-main-title">
+                                <h2>Internet rápido para <span
+                                        class="section-main-title-primery">todos tus dispositivos</span></h2>
+                                <p>Internet estable para todo: streaming, videollamadas y juegos. TV Go Max (TV online)
+                                    incluido en planes seleccionados.</p>
+                            </div>
+                            
+                        </div>
+                        <div class="theme-btn">
+                            <a href="" class="btn btn-bg-white">Contratar ahora<i class="icon-1" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Lado derecho: imagen -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 wow fadeInRight animated"
+                         data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="joinus-four-right">
+                            <div class="joinus-four-right-img">
+                                <img src="/media/{{ pagina.img_4 }}" alt="Internet y TV online - REDPLUS"/>
+                                <div class="joinus-four-right-img-icon text-center" style="background: 0px !important;">
+                                    <img src="/media/{{ pagina.botarga_1 }}" alt="Botarga REDPLUS"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="pricing-package-one">
+            <div class="pricing-package-one-shape-1"></div>
+            <div class="pricing-package-one-shape-2"></div>
+            <div class="pricing-package-one-shape-3"></div>
+            <div class="pricing-package-one-shape-4"></div>
+            <div class="pricing-package-one-shape-5"></div>
+            <div class="pricing-package-one-shape-6"></div>
+            <div class="pricing-package-one-shape-8"></div>
+            <div class="pricing-package-one-shape-9"></div>
+            <div class="pricing-package-one-shape-10"></div>
+            <div class="pricing-package-one-shape-11"></div>
+
+            <div class="container">
+                <div class="section-title text-center">
+
+                    <div class="section-main-title text-center">
+                        <h2 class="mx-auto">
+                            Conecta tu hogar con <span class="section-main-title-primery">Internet sin límites</span>
+                        </h2>
+                        <p class="mt-2">
+                            Fibra Óptica y Wireless con velocidad simétrica, compresión inteligente y dispositivos
+                            ilimitados.
+                        </p>
+                    </div>
+
+                    <div class="section-title text-center mt-5">
+                        <i class="icon-angle-double-right"></i>
+                        <span>Planes Home – Fibra Óptica</span>
+                    </div>
+                    <div class="row">
+                        {% for p in planes %}
+                            {% if p.activo %}
+                                {% include "planes/_card_plan.html" with plan=p %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="brand-one">
+            <div class="container">
+                
+                
+                
+                <!-- brand-one-inner -->
+                <div class="brand-one-inner text-center">
+                    <!-- section-title -->
+                    <div class="section-title">
+                        <h6>Disfruta tus plataformas preferidas con <span> RedPlus</span> </h6>
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-2 col-lg-2 col-md-4 col-sm-4 col-6 wow fadeInLeft animated"
+                             data-wow-duration="1500ms" data-wow-delay="600ms">
+                            <!-- inner-img -->
+                            <div class="brand-one-inner-img">
+                                <a href="#">
+                                    <img src="/static/images/resources/plataformas-18.png" alt="netflix">
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-2 col-lg-2 col-md-4 col-sm-4 col-6 wow fadeInLeft animated"
+                             data-wow-duration="1500ms" data-wow-delay="600ms">
+                            <!-- inner-img -->
+                            <div class="brand-one-inner-img">
+                                <a href="#">
+                                    <img src="/static/images/resources/plataformas-17.png" alt="netflix">
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-2 col-lg-2 col-md-4 col-sm-4 col-6 wow fadeInLeft animated"
+                             data-wow-duration="1500ms" data-wow-delay="600ms">
+                            <!-- inner-img -->
+                            <div class="brand-one-inner-img">
+                                <a href="#">
+                                    <img src="/static/images/resources/plataformas-19.png" alt="netflix">
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-2 col-lg-2 col-md-4 col-sm-4 col-6 wow fadeInLeft animated"
+                             data-wow-duration="1500ms" data-wow-delay="600ms">
+                            <!-- inner-img -->
+                            <div class="brand-one-inner-img">
+                                <a href="#">
+                                    <img src="/static/images/resources/plataformas-16.png" alt="netflix">
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-2 col-lg-2 col-md-4 col-sm-4 col-6 wow fadeInLeft animated"
+                             data-wow-duration="1500ms" data-wow-delay="600ms">
+                            <!-- inner-img -->
+                            <div class="brand-one-inner-img">
+                                <a href="#">
+                                    <img src="/static/images/resources/plataformas-15.png" alt="netflix">
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-2 col-lg-2 col-md-4 col-sm-4 col-6 wow fadeInLeft animated"
+                             data-wow-duration="1500ms" data-wow-delay="600ms">
+                            <!-- inner-img -->
+                            <div class="brand-one-inner-img">
+                                <a href="#">
+                                    <img src="/static/images/resources/plataformas-14.png" alt="netflix">
+                                </a>
+                            </div>
+                            
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 {% endblock %}
+
+

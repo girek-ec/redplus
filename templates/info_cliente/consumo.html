@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Arcotel - RedPlus{% endblock %}
+
+{% block content %}
+
+ <!-- progress-one -->
+            <section class="progress-one" style="padding-bottom: 60px!important;margin-bottom: 100px!important;">
+                <div class="container" >
+                    <div class="row" >
+                        <div class="col-xl-6 col-lg-6  col-md-12 col-sm-12 wow fadeInLeft animated"
+                            data-wow-duration="1500ms" data-wow-delay="200ms">
+                            <!-- progress-one-left -->
+                            <div class="progress-one-left">
+                                <!-- section-title -->
+                                <div class="section-title">
+                                    <i class="icon-main-icon"></i>
+                                    <span>Consumo RedPlus</span>
+                                </div>
+                                <!-- section-main-title -->
+                                <div class="section-main-title">
+                                    <h2> Redplus, potencia total en ancho de
+                                        <span class="section-main-title-primery"> BANDA. </span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6  col-md-12 col-sm-12 wow fadeInRight animated"
+                            data-wow-duration="1500ms" data-wow-delay="200ms" >
+                            <!-- progress-one-right -->
+                            <div class="progress-one-right">
+                                <p>Consumo promedio core balsas-01 mensual</p>
+                                
+                                <!-- about-three-img -->
+                                <div class="about-three-img" style="width: 100%!important; text-align: center!important; margin-top: 50px!important;">
+                                    <img src="/media/{{ pagina.img_consumo }}" alt="detalle consumo"  width="100%">
+                                </div>
+                            </div>
+                            
+                                
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}

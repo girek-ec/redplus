@@ -2,9 +2,54 @@
 {% block title %}Arcotel - RedPlus{% endblock %}
 
 {% block content %}
-<div class="card">
-    <!-- EJEMPLO: reemplaza por el embed real que te dé Speedtest Custom -->
-<iframe src="https://tu-subdominio.speedtestcustom.com" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
-</div>
+ <!-- progress-one -->
+            <section class="progress-one" style="padding-bottom: 60px!important;margin-bottom: 100px!important;">
+                <div class="container" >
+                    <div class="row" >
+                        <div class="col-xl-6 col-lg-6  col-md-12 col-sm-12 wow fadeInLeft animated"
+                            data-wow-duration="1500ms" data-wow-delay="200ms">
+                            <!-- progress-one-left -->
+                            <div class="progress-one-left">
+                                <!-- section-title -->
+                                <div class="section-title">
+                                    <i class="icon-main-icon"></i>
+                                    <span>Calidad RedPlus</span>
+                                </div>
+                                <!-- section-main-title -->
+                                <div class="section-main-title">
+                                    <h2>Cumplimos con los parámetros de calidad de</span> <span class="section-main-title-primery"> ARCOTEL </span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6  col-md-12 col-sm-12 wow fadeInRight animated"
+                            data-wow-duration="1500ms" data-wow-delay="200ms" >
+                            <!-- progress-one-right -->
+                            <div class="progress-one-right">
+                                <p>
+                                    La Normativa Ecuatoriana regula la prestación del Servicio de Acceso a Internet mediante lo dispuesto en la RESOLUCIÓN 216-09-CONATEL-2019, con la que se definen los Parámetros de Calidad, Definiciones y Obligaciones para la prestación del Servicio de Valor Agregado de Internet (Actualmente Servicio de Acceso a Internet)
+                                </p>
+                                <!-- list-item -->
+                                <ul class="list-item">
+                                    <li>
+                                        <i class="icon-right-arrow"></i>
+                                        <p>Resolución 216-09-CONATEL-2009</p>
+                                    </li>
+                                    
+                                    <div class="banner-three-btn" style="text-align: center!important;">
+                                        <a class="" href="/media/{{product.ficha_tecnica.ficha}}" target="_blank"></a>
+                                        <a href="/media/{{ pagina.archivo_calidad }}" class="btn btn-bg-primary"  target="_blank">Descargar  Resolución<i class="icon-1"></i></a>
+                                    </div>
+                                </ul>
+                                <!-- about-three-img -->
+                                <div class="about-three-img" style="width: 100%!important; text-align: center!important; margin-top: 50px!important;">
+                                    <img src="/media/{{ pagina.img_calidad }}" alt="about-three-shape-img-3"  width="100%">
+                                </div>
+                            </div>
+                            
+                                
+                        </div>
+                    </div>
+                </div>
+            </section>
 {% endblock %}

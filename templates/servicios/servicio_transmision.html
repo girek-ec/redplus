@@ -1,15 +1,128 @@
 {% extends "base.html" %}
-{% block title %}Arcotel - RedPlus{% endblock %}
+{% block title %}Transmisiones en vivo - RedPlus{% endblock %}
 
 {% block content %}
-<div class="card">
-    <h1>Arcotel</h1>
-    <p>Aquí va el contenido de la página <strong>Arcotel</strong>. Edita este archivo para agregar el texto legal o la información necesaria.</p>
+<main class="site-main">
+  <!-- about-three (hero + descripción) -->
+  <section class="about-three" style="margin-top: 90px!important;">
+    <div class="about-three-shape"></div>
+    <div class="container">
+      <div class="row align-items-center">
 
-    {% if telefono %}
-    <p><strong>Teléfono para reclamos:</strong> {{ telefono }}</p>
-    {% endif %}
+        <!-- imagen -->
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft animated"
+             data-wow-duration="1500ms" data-wow-delay="200ms">
+          <div class="about-three-img">
+            <img src="/media/{{ pagina.img_serv_vivo }}" alt="Transmisiones en vivo - RedPlus">
+            <div class="about-three-img-2"></div>
+            <div class="about-three-img-3"></div>
+            <div class="about-three-img-4"></div>
+            <div class="about-three-img-5"></div>
+            <div class="about-three-img-6"></div>
+          </div>
+        </div>
 
-    <p><a href="{% url 'home' %}">Volver al inicio</a></p>
-</div>
+        <!-- texto -->
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInRight animated"
+             data-wow-duration="1500ms" data-wow-delay="200ms">
+          <div class="about-three-info">
+            <div class="section-title">
+              <i class="icon-main-icon"></i>
+              <span>Transmisiones en vivo</span>
+            </div>
+
+            <div class="section-main-title">
+              <h2>Streaming profesional <span class="section-main-title-primery unline">Live & TV</span></h2>
+              <p>Ideal para lanzamientos, congresos, clases y eventos deportivos. Pregunta por prueba previa y por grabación/archivo: señal estable, baja latencia y soporte técnico durante toda la emisión.</p>
+            </div>
+
+            <ul class="about-three-details">
+              <li class="text"><i class="flaticon-cloud-network-1"></i><h6><a href="#">Enlaces redundantes</a></h6></li>
+              <li class="text"><i class="flaticon-efficiency"></i><h6><a href="#">Baja latencia y sincronía</a></h6></li>
+              <li class="text"><i class="flaticon-watching-tv"></i><h6><a href="#">Multiplataforma (YouTube, Facebook, Zoom)</a></h6></li>
+            </ul>
+
+                <!-- CTA final -->
+              <div class="row" style="margin-top:30px;">
+                <div class="col-12 text-center">
+                    <a href="https://wa.me/593{{ marca.whatsapp }}?text=Hola,%20quiero%20reservar%20una%20fecha%20para%20un%20evento%20de%20transmisión%20en%20vivo%20con%20{{ marca.nombre|urlencode }}" class="btn btn-bg-primary">
+                        Reservar fecha
+                    </a>                
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- services-three (detalles/beneficios) -->
+  <section class="services-three">
+    <div class="services-three-shape-1"></div>
+    <div class="services-three-shape-2">
+      <div class="inner-shape-2">
+        <img src="/static/images/resources/joinus-two-shape-3.png" alt="shape">
+      </div>
+    </div>
+    <div class="services-three-shape-3">
+      <div class="inner-shape-3">
+        <img src="/static/images/shapes/services-three-shape-img-2.png" alt="speed">
+        <div class="package-three-text">
+          <h2>100</h2>
+          <p>MBPS+</p>
+        </div>
+      </div>
+    </div>
+    <div class="services-three-shape-4"></div>
+
+    <div class="container">
+      <div class="section-title text-center">
+        <i class="icon-main-icon"></i>
+        <span>Qué incluye</span>
+      </div>
+
+      <div class="section-main-title text-center">
+        <h2 class="mx-auto">Solución completa para tu transmisión
+          <span class="section-main-title-primery">sin complicaciones</span>
+        </h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="300ms">
+          <div class="services-three-block">
+            <i class="flaticon-global-network"></i>
+            <h5>Configuración y prueba</h5>
+            <p>Montaje de enlace, prueba de ancho de banda y test de latencia antes del evento.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="200ms">
+          <div class="services-three-block">
+            <i class="flaticon-efficiency"></i>
+            <h5>Soporte técnico en vivo</h5>
+            <p>Técnico en sitio o remoto durante la transmisión para resolver cualquier imprevisto.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+          <div class="services-three-block">
+            <i class="flaticon-tv"></i>
+            <h5>Calidad y formatos</h5>
+            <p>1080p/4K opcional, multibitrate y grabación para archivo posterior.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="00ms">
+          <div class="services-three-block">
+            <i class="flaticon-secure-shield"></i>
+            <h5>Seguridad y control</h5>
+            <p>Encriptado de señal, control de accesos y bloqueo de fuentes no autorizadas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 {% endblock %}

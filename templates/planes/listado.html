@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Planes de internet - REDPLUS{% endblock %}
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h1 class="mb-4">Planes de internet</h1>
+    <div class="row">
+      {% for plan in planes %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3>{{ plan.nombre }}</h3>
+            <p class="text-muted">{{ plan.velocidad_mbps }} Mbps</p>
+            <p class="display-6 fw-bold">${{ plan.precio }} <small>/mes</small></p>
+            <ul class="mb-3">
+              {% for f in plan.caracteristicas.all %}<li>{{ f.texto }}</li>{% endfor %}
+            </ul>
+            <a href="{% url 'contacto:solicitar' %}?plan={{ plan.slug }}" class="btn btn-primary w-100">Contratar</a>
+          </div>
+        </div>
+      </div>
+      {% empty %}<p>No hay planes cargados.</p>{% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

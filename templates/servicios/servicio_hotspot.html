@@ -1,15 +1,118 @@
 {% extends "base.html" %}
-{% block title %}Arcotel - RedPlus{% endblock %}
+{% block title %}Internet para eventos - Hotspot | RedPlus{% endblock %}
 
 {% block content %}
-<div class="card">
-    <h1>Arcotel</h1>
-    <p>Aquí va el contenido de la página <strong>Arcotel</strong>. Edita este archivo para agregar el texto legal o la información necesaria.</p>
+<main class="site-main">
+  <!-- banner-three -->
+  <section class="banner-three">
+    <div class="banner-three-shape-1"></div>
+    <div class="banner-three-shape-2"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft animated"
+             data-wow-duration="1500ms" data-wow-delay="200ms">
+          <!-- banner-info -->
+          <div class="banner-three-info">
+            <div class="section-title">
+              <i class="icon-main-icon"></i>
+              <span>Conexión gestionada para eventos</span>
+            </div>
 
-    {% if telefono %}
-    <p><strong>Teléfono para reclamos:</strong> {{ telefono }}</p>
-    {% endif %}
+            <div class="section-main-title">
+              <h1>Wi-Fi para <span class="text-shape">eventos</span><br>& Hotspot profesional</h1>
+            </div>
 
-    <p><a href="{% url 'home' %}">Volver al inicio</a></p>
-</div>
+            <div class="banner-three-details">
+              <p>Red segura, control de acceso y priorización de tráfico: garantizamos Internet estable para ferias, congresos y locales temporales. Instalación rápida y soporte técnico durante el evento.</p>
+            </div>
+
+            <div class="banner-three-btn">
+                <a href="https://wa.me/593{{ marca.whatsapp }}?text=Hola,%20quiero%20información%20y%20reservar%20servicios%20de%20Conexión%20gestionada,%20Wi-Fi%20para%20eventos%20y%20Hotspot%20profesional%20con%20{{ marca.nombre|urlencode }}" class="btn btn-bg-primary">
+                    Consultar servicios
+                </a>            
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInRight animated"
+             data-wow-duration="1500ms" data-wow-delay="200ms">
+          <!-- banner-img -->
+          <div class="banner-three-img">
+            <img src="/media/{{ pagina.img_serv_hotspot }}" alt="Hotspot e Internet para eventos - RedPlus">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <!-- services-three -->
+  <section class="services-three">
+    <div class="services-three-shape-1"></div>
+    <div class="services-three-shape-2">
+      <div class="inner-shape-2">
+        <img src="/static/images/resources/joinus-two-shape-3.png" alt="shape">
+      </div>
+    </div>
+    <div class="services-three-shape-3">
+      <div class="inner-shape-3">
+        <img src="/static/images/shapes/services-three-shape-img-2.png" alt="speed">
+        <div class="package-three-text">
+          <h2>100</h2>
+          <p>MBPS+</p>
+        </div>
+      </div>
+    </div>
+    <div class="services-three-shape-4"></div>
+
+    <div class="container">
+      <div class="section-title text-center">
+        <i class="icon-main-icon"></i>
+        <span>Servicios para tu evento</span>
+      </div>
+
+      <div class="section-main-title text-center">
+        <h2 class="mx-auto">Conexión profesional y gestión de usuarios
+          <span class="section-main-title-primery">para todo tipo de eventos</span>
+        </h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="300ms">
+          <div class="services-three-block">
+            <i class="flaticon-global-network"></i>
+            <h5>Hotspot </h5>
+            <p>Login personalizado con branding, opciones de registro y control de acceso por evento.</p>
+            
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="200ms">
+          <div class="services-three-block">
+            <i class="flaticon-efficiency"></i>
+            <h5>QoS y Prioridad</h5>
+            <p>Priorizamos streaming, sistemas de control para evitar saturación y garantizar experiencia para todos.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="100ms">
+          <div class="services-three-block">
+            <i class="flaticon-secure-shield"></i>
+            <h5>Seguridad y Filtrado</h5>
+            <p>Firewalls, bloqueo de sitios peligrosos y reglas por usuario para proteger tu red y a los asistentes.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInLeft animated" data-wow-duration="1500ms" data-wow-delay="00ms">
+          <div class="services-three-block">
+            <i class="flaticon-energy-management"></i>
+            <h5>Reporte y Analítica</h5>
+            <p>Informe final con usuarios conectados, picos de consumo y métricas para mejorar próximas ediciones.</p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+</main>
 {% endblock %}
